@@ -47,8 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
-                <fragment
+                <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/fr_movies"
                     android:name="ua.kpi.comsys.iv8230.MoviesFragment"
                     android:layout_width="wrap_content"
