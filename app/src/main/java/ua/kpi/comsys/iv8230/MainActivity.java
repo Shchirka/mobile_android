@@ -1,6 +1,7 @@
 package ua.kpi.comsys.iv8230;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,14 +9,23 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TabHost;
+
+import java.io.IOException;
+import java.net.URI;
 
 public class MainActivity extends AppCompatActivity{
     ActionBar actionBar;
+    public static final int GALLERY_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +55,11 @@ public class MainActivity extends AppCompatActivity{
         tabSpec.setIndicator("Movies");
         tabHost.addTab(tabSpec);
 
+        tabSpec = tabHost.newTabSpec("Images");
+        tabSpec.setContent(R.id.ImagesPage);
+        tabSpec.setIndicator("Images");
+        tabHost.addTab(tabSpec);
+
         tabHost.setCurrentTab(0);
     }
 
@@ -64,27 +79,6 @@ public class MainActivity extends AppCompatActivity{
         fragmentTransaction.replace(R.id.fr_place, fragment);
         fragmentTransaction.commit();
     }
-
-    /*View.OnClickListener ShowMovieInfo = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Fragment fragment = new MovieFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fr_movies, fragment);
-            fragmentTransaction.addToBackStack("back");
-            fragmentTransaction.commit();
-        }
-    };*/
-    /*View.OnClickListener AddMovie = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Fragment fragment = new AddMovieFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fr_movies, fragment);
-            fragmentTransaction.addToBackStack("back");
-            fragmentTransaction.commit();
-        }
-    };*/
     @Override
     public void onBackPressed() {
         actionBar.setDisplayHomeAsUpEnabled(false);
@@ -104,4 +98,24 @@ public class MainActivity extends AppCompatActivity{
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    /*@Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Bitmap bitmap = null;
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
+        switch(requestCode) {
+            case GALLERY_REQUEST:
+                if(resultCode == RESULT_OK){
+                    Uri selectedImage = data.getData();
+                    try {
+                        bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    imageView.setImageBitmap(bitmap);
+                }
+        }
+    }*/
 }

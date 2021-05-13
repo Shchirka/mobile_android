@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".AddMovieFragment">
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        android:text="Enter movie title"
-        android:textSize="18dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/enter_title"
-        android:hint="Movie title"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter movie title"
+            android:textSize="18dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter_title"
+            android:hint="Movie title"
+            />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-        android:text="Enter type of movie"
-        android:textSize="18dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/enter_type"
-        android:hint="Type of movie"
-        />
+            android:text="Enter type of movie"
+            android:textSize="18dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter_type"
+            android:hint="Type of movie"
+            />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-        android:text="Enter year of realese"
-        android:textSize="18dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/enter_year"
-        android:hint="Year"
-        android:inputType="number"/>
+            android:text="Enter year of realese"
+            android:textSize="18dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter_year"
+            android:hint="Year"
+            android:inputType="number"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/add_movie_button"
-        android:text="Add movie"/>
-
-
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_movie_button"
+            android:text="Add movie"/>
+    </LinearLayout>
+</ScrollView>
