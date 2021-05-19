@@ -56,14 +56,14 @@
 
             <LinearLayout
                 android:id="@+id/ImagesPage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:orientation="vertical">
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/fr_images"
                     android:name="ua.kpi.comsys.iv8230.ImagesFragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"/>
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>

@@ -25,7 +25,6 @@ import java.net.URI;
 
 public class MainActivity extends AppCompatActivity{
     ActionBar actionBar;
-    public static final int GALLERY_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,24 +97,4 @@ public class MainActivity extends AppCompatActivity{
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bitmap = null;
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
-
-        switch(requestCode) {
-            case GALLERY_REQUEST:
-                if(resultCode == RESULT_OK){
-                    Uri selectedImage = data.getData();
-                    try {
-                        bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    imageView.setImageBitmap(bitmap);
-                }
-        }
-    }*/
 }
